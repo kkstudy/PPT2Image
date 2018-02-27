@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.github.kimmking</groupId>
+	<artifactId>ppt2image</artifactId>
+	<version>1.0.0</version>
+
+	<packaging>jar</packaging>
+	<name>ppt2image</name>
+	<description>ppt2image is A fast Test Tools for Rest API</description>
+
+	<url>https://github.com/kimmking/ppt2image</url>
+	<inceptionYear>2012</inceptionYear>
+
+	<properties>
+		<junit.version>4.12</junit.version>
+		<poi.version>3.9</poi.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<source-version>1.8</source-version>
+    	<target-version>1.8</target-version>
+    	<commons-io-version>2.6</commons-io-version>
+
+    	<maven-surefire-plugin-version>2.10</maven-surefire-plugin-version>
+    	<maven-compiler-plugin-version>2.5.1</maven-compiler-plugin-version>
+    	
+	</properties>
+
+	<scm>
+		<url>https://github.com/kimmking/ppt2image</url>
+		<connection>scm:git:https://git@github.com/kimmking/ppt2image.git</connection>
+	</scm>
+
+	<developers>
+		<developer>
+   			<id>kimmking</id>
+   			<name>kimmking</name>
+   			<email>kimmking@163.com</email>
+  		</developer>
+	</developers>
+
+	<licenses>
+		<license>
+			<name>Apache 2</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+
+	<dependencies>
+
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>${poi.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi-scratchpad</artifactId>
+		    <version>${poi.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>${poi.version}</version>
+		</dependency>
+
+	</dependencies>
+
+
+	<build>
+		<resources>
+			<resource>
+				<directory>${project.basedir}/src/main/resources</directory>
+				<includes>
+					<include>**/*</include>
+				</includes>
+			</resource>
+		</resources>
+
+		<plugins>
+			<plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-compiler-plugin</artifactId>
+		        <version>${maven-compiler-plugin-version}</version>
+		        <configuration>
+		          <source>${source-version}</source>
+		          <target>${target-version}</target>
+		          <optimize>true</optimize>
+		          <debug>true</debug>
+		          <showDeprecation>true</showDeprecation>
+		          <showWarnings>true</showWarnings>
+		          <encoding>UTF-8</encoding> 
+		        </configuration>
+		    </plugin>
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin-version}</version>
+	          	<configuration>
+		            <redirectTestOutputToFile>true</redirectTestOutputToFile>
+		            <failIfNoTests>false</failIfNoTests>
+					<forkMode>always</forkMode>
+					<runOrder>alphabetical</runOrder>
+					<includes>
+						<include>**/*Test.*</include>
+					</includes>
+					<argLine>-XX:-UseSplitVerifier</argLine>
+				</configuration>
+			</plugin>
+			
+		</plugins>
+	</build>
+
+</project>
