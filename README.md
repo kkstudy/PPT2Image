@@ -20,7 +20,7 @@ List<String> images = convertPPTtoImage(file,"D:\\git\\PPT2Image\\images\\pptx")
 ## Images
 
 - PPT 转换效果
-[!PPT2](https://raw.githubusercontent.com/kkstudy/PPT2Image/master/images/ppt/2.jpg)
+![PPT2](https://raw.githubusercontent.com/kkstudy/PPT2Image/master/images/ppt/2.jpg)
 
 - PPTX 转换效果
-[!PPTX2](https://raw.githubusercontent.com/kkstudy/PPT2Image/master/images/pptx/2.jpg)
+![PPTX2](https://raw.githubusercontent.com/kkstudy/PPT2Image/master/images/pptx/2.jpg)
